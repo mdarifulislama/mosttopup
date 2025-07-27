@@ -1,0 +1,25 @@
+<script>
+  const packages = document.querySelectorAll(".package");
+  let selectedPackage = "";
+
+  packages.forEach(pkg => {
+    pkg.addEventListener("click", () => {
+      packages.forEach(p => p.style.background = "#e3f2fd"); // Reset
+      pkg.style.background = "#64b5f6"; // Highlight selected
+      selectedPackage = pkg.textContent.trim();
+    });
+  });
+
+  document.querySelector(".btn").addEventListener("click", () => {
+    const uid = document.querySelectorAll("input")[0].value.trim();
+    const name = document.querySelectorAll("input")[1].value.trim();
+
+    if (!uid || !name || !selectedPackage) {
+      alert("দয়া করে সব তথ্য পূরণ করুন ও একটি প্যাকেজ সিলেক্ট করুন!");
+      return;
+    }
+
+    // এটা ব্যাকএন্ড/গুগল ফর্ম বা API দিয়ে সাবমিট করতে পারেন
+    alert(`অর্ডার সফলভাবে গ্রহণ করা হয়েছে:\nUID: ${uid}\nনাম: ${name}\nপ্যাকেজ: ${selectedPackage}`);
+  });
+</script>

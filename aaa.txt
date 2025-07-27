@@ -1,0 +1,5 @@
+.package.selected {
+  background: #64b5f6;
+  color: white;
+  font-weight: bold;
+}
